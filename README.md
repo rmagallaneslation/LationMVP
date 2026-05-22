@@ -16,7 +16,7 @@ This repository powers the public Lation landing page and protected lead capture
 
 - **Vercel:** frontend hosting and serverless `POST /api/lead`.
 - **Cloudflare:** DNS, CDN/proxy where compatible, WAF/security rules, SSL/TLS, and Turnstile.
-- **Supabase:** lead tables only: `leads`, `leads_demo`, `leads_dev`.
+- **Supabase:** production lead table: `leads`.
 - **Resend:** notification emails after successful lead insert.
 
 n8n is not part of this landing page architecture.
@@ -48,7 +48,7 @@ Public frontend env:
 ```bash
 VITE_TURNSTILE_SITE_KEY=
 VITE_SUPABASE_URL=
-VITE_DEMO_MODE=true
+VITE_DEMO_MODE=false
 VITE_API_URL=
 ```
 
@@ -56,7 +56,7 @@ Server-only env:
 
 ```bash
 SUPABASE_SERVICE_ROLE_KEY=
-LEADS_TARGET_TABLE=leads_demo
+LEADS_TARGET_TABLE=leads
 RESEND_API_KEY=
 LEAD_NOTIFY_TO=
 LEAD_NOTIFY_FROM=Lation Leads <leads@lation.com.mx>
@@ -77,11 +77,9 @@ Never expose or commit `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, or `TURNST
 
 Apply the migrations in `supabase/migrations/`.
 
-Expected tables:
+Expected table:
 
 - `leads` for production.
-- `leads_demo` for the `DEMO` branch and preview QA.
-- `leads_dev` for development or integration environments.
 
 Each table stores:
 
@@ -99,7 +97,7 @@ Each table stores:
 - `status`
 - `metadata`
 
-RLS is enabled on all lead tables. Public frontend inserts are intentionally not allowed. Inserts happen only through `POST /api/lead` using `SUPABASE_SERVICE_ROLE_KEY`.
+RLS is enabled on the lead table. Public frontend inserts are intentionally not allowed. Inserts happen only through `POST /api/lead` using `SUPABASE_SERVICE_ROLE_KEY`.
 
 ## Resend Setup
 
@@ -135,8 +133,8 @@ Use Vercel as the hosting and serverless runtime source of truth.
 
 Recommended branch mapping:
 
-- `DEMO`: preview deployment, `LEADS_TARGET_TABLE=leads_demo`, `VITE_DEMO_MODE=true`.
-- `DEV`: integration/development, `LEADS_TARGET_TABLE=leads_dev` if deployed.
+- `DEMO`: preview deployment, no Supabase writes.
+- `DEV`: integration/development, no Supabase writes.
 - `main`: production deployment, `LEADS_TARGET_TABLE=leads`.
 
 Set all secrets in the Vercel dashboard. Do not rely on checked-in env files.

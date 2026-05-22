@@ -13,7 +13,7 @@ import {
 
 const RATE_LIMIT = 5;
 const RATE_WINDOW_SECONDS = 10 * 60;
-const ALLOWED_LEAD_TABLES = new Set(["leads", "leads_demo", "leads_dev"]);
+const ALLOWED_LEAD_TABLES = new Set(["leads"]);
 
 function getSupabaseAdminClient() {
   const supabaseUrl = process.env.VITE_SUPABASE_URL?.trim();
@@ -39,18 +39,6 @@ function resolveLeadTargetTable() {
     }
 
     return { ok: true, value: configuredTable };
-  }
-
-  if (process.env.VITE_DEMO_MODE === "true") {
-    return { ok: true, value: "leads_demo" };
-  }
-
-  if (process.env.VERCEL_GIT_COMMIT_REF === "DEMO") {
-    return { ok: true, value: "leads_demo" };
-  }
-
-  if (process.env.VERCEL_GIT_COMMIT_REF === "DEV") {
-    return { ok: true, value: "leads_dev" };
   }
 
   return { ok: true, value: "leads" };

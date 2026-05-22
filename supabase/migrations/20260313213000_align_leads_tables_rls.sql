@@ -5,7 +5,7 @@ declare
   target_table text;
   policy_record record;
 begin
-  foreach target_table in array array['leads', 'leads_demo', 'leads_dev'] loop
+  foreach target_table in array array['leads'] loop
     execute format('alter table if exists public.%I enable row level security', target_table);
     execute format('revoke all on table public.%I from anon, authenticated', target_table);
 

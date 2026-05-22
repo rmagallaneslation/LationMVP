@@ -6,8 +6,8 @@ This app deploys as a Vercel-hosted landing page with a serverless lead capture 
 
 Configure the project in Vercel and deploy from the approved branches:
 
-- `DEMO`: preview QA, `LEADS_TARGET_TABLE=leads_demo`, `VITE_DEMO_MODE=true`.
-- `DEV`: development/integration if deployed, `LEADS_TARGET_TABLE=leads_dev`.
+- `DEMO`: preview QA, no Supabase writes.
+- `DEV`: development/integration if deployed, no Supabase writes.
 - `main`: production, `LEADS_TARGET_TABLE=leads`.
 
 Required environment variables:
@@ -15,9 +15,9 @@ Required environment variables:
 ```bash
 VITE_TURNSTILE_SITE_KEY=
 VITE_SUPABASE_URL=
-VITE_DEMO_MODE=true
+VITE_DEMO_MODE=false
 SUPABASE_SERVICE_ROLE_KEY=
-LEADS_TARGET_TABLE=leads_demo
+LEADS_TARGET_TABLE=leads
 RESEND_API_KEY=
 LEAD_NOTIFY_TO=
 LEAD_NOTIFY_FROM=Lation Leads <leads@lation.com.mx>
@@ -49,11 +49,9 @@ Turnstile must be configured for the production hostnames and any Vercel preview
 
 ## Supabase
 
-Apply the migrations under `supabase/migrations/`. Expected tables:
+Apply the migrations under `supabase/migrations/`. Expected table:
 
 - `leads`
-- `leads_demo`
-- `leads_dev`
 
 RLS is enabled and public frontend inserts are denied. The Vercel API uses `SUPABASE_SERVICE_ROLE_KEY` server-side to insert leads.
 

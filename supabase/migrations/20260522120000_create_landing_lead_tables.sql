@@ -7,7 +7,7 @@ declare
   target_table text;
   policy_record record;
 begin
-  foreach target_table in array array['leads', 'leads_demo', 'leads_dev'] loop
+  foreach target_table in array array['leads'] loop
     execute format(
       'create table if not exists public.%I (
         id uuid primary key default gen_random_uuid(),

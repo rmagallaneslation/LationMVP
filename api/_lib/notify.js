@@ -17,8 +17,7 @@ function parseRecipients(value) {
 }
 
 function resolveLeadSubjectPrefix(targetTable) {
-  if (targetTable === "leads_dev") return "[DEV] ";
-  if (targetTable === "leads_demo" || process.env.VITE_DEMO_MODE === "true") return "[DEMO] ";
+  if (process.env.VITE_DEMO_MODE === "true") return "[DEMO] ";
   return "";
 }
 

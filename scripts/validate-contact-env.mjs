@@ -9,14 +9,10 @@ if (!isHostedBuild) {
 
 const requiredFrontendEnv = ["VITE_TURNSTILE_SITE_KEY"];
 const requiredLeadApiEnv = [
-  "SUPABASE_URL",
+  "VITE_SUPABASE_URL",
   "SUPABASE_SERVICE_ROLE_KEY",
   "LEADS_TARGET_TABLE",
-  "CF_TURNSTILE_SECRET",
-  "CF_TURNSTILE_EXPECTED_ACTION",
-  "CF_TURNSTILE_ALLOWED_HOSTNAMES",
-  "UPSTASH_REDIS_REST_URL",
-  "UPSTASH_REDIS_REST_TOKEN",
+  "TURNSTILE_SECRET_KEY",
 ];
 const allowedLeadTables = new Set(["leads", "leads_demo", "leads_dev"]);
 
@@ -48,7 +44,7 @@ if (usesServerlessLeadRoute) {
   const configuredTable = process.env.LEADS_TARGET_TABLE?.trim();
   if (!allowedLeadTables.has(configuredTable)) {
     console.error(
-      `Invalid LEADS_TARGET_TABLE: ${configuredTable}. Allowed values: leads, leads_demo, leads_dev`
+      `Invalid LEADS_TARGET_TABLE: ${configuredTable}. Allowed values: leads, leads_demo, leads_dev`,
     );
     process.exit(1);
   }

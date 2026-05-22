@@ -1,7 +1,0 @@
-Total messages: 1 (Errors: 1, Warnings: 0)
-
-Error: supabaseUrl is required.
-    at C4 (http://127.0.0.1:4173/assets/index-BJm7S7G6.js:91:39289)
-    at new T4 (http://127.0.0.1:4173/assets/index-BJm7S7G6.js:91:39659)
-    at P4 (http://127.0.0.1:4173/assets/index-BJm7S7G6.js:91:42956)
-    at http://127.0.0.1:4173/assets/index-BJm7S7G6.js:91:43424

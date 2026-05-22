@@ -84,6 +84,10 @@ export function getAllowedOrigins() {
 
 export function isAllowedOrigin(origin, allowedOrigins, isProduction) {
   if (!origin) return !isProduction;
+  if (!isProduction) {
+    const hostname = normalizeHostname(origin);
+    if (hostname === "localhost" || hostname === "127.0.0.1") return true;
+  }
   return allowedOrigins.includes(origin);
 }
 
@@ -172,15 +176,24 @@ export function validateLeadPayload(rawBody) {
   const name = typeof body.name === "string" ? body.name.trim() : "";
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const company = typeof body.company === "string" ? body.company.trim() : "";
+  const role = typeof body.role === "string" ? body.role.trim() : "";
+  const phone = typeof body.phone === "string" ? body.phone.trim() : "";
+  const serviceInterest =
+    typeof body.serviceInterest === "string" ? body.serviceInterest.trim() : "";
+  const locale = typeof body.locale === "string" ? body.locale.trim() : "";
   const message = typeof body.message === "string" ? body.message.trim() : "";
   const website = typeof body.website === "string" ? body.website.trim() : "";
   const turnstileToken =
     typeof body.turnstileToken === "string" ? body.turnstileToken.trim() : "";
 
-  if (!name || name.length > 100) return { ok: false };
+  if (name.length < 2 || name.length > 100) return { ok: false };
   if (!email || !emailRegex.test(email)) return { ok: false };
   if (company.length > 100) return { ok: false };
-  if (!message || message.length > 2000) return { ok: false };
+  if (role.length > 160) return { ok: false };
+  if (phone.length > 50) return { ok: false };
+  if (serviceInterest.length > 100) return { ok: false };
+  if (locale.length > 20) return { ok: false };
+  if (message.length < 10 || message.length > 2000) return { ok: false };
   if (!turnstileToken) return { ok: false };
   if (website.length > 200) return { ok: false };
 
@@ -190,6 +203,10 @@ export function validateLeadPayload(rawBody) {
       name,
       email,
       company: company || null,
+      role: role || null,
+      phone: phone || null,
+      serviceInterest: serviceInterest || null,
+      locale: locale || null,
       message,
       website,
       turnstileToken,
@@ -198,7 +215,7 @@ export function validateLeadPayload(rawBody) {
 }
 
 export async function verifyTurnstileToken(token, ip, requestHost = "") {
-  const secret = process.env.CF_TURNSTILE_SECRET?.trim();
+  const secret = process.env.TURNSTILE_SECRET_KEY?.trim();
   if (!secret) {
     return { ok: false, reason: "service_unavailable" };
   }

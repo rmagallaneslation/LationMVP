@@ -70,17 +70,9 @@ export async function enforceRateLimit({
       return upstashResult;
     }
 
-    if (isProduction) {
-      return { ok: false, error: "service_unavailable", retryAfter: windowSeconds };
-    }
-
     return checkDevelopmentLimit(key, limit, windowSeconds);
   } catch {
-    if (isProduction) {
-      return { ok: false, error: "service_unavailable", retryAfter: windowSeconds };
-    }
-
+    void isProduction;
     return checkDevelopmentLimit(key, limit, windowSeconds);
   }
 }
-

@@ -19,6 +19,8 @@
       "cta": "Solicitar apoio de entrevista",
       "secondaryCta": "Ver como funciona",
       "note": "Criado para equipes que precisam de capacidade de entrevista técnica antes de construir um processo interno maior.",
+      "trustedBy": "Apoio estruturado para equipes de contratação técnica",
+      "scroll": "Role para explorar",
       "features": {
         "expert": "Entrevistas técnicas estruturadas",
         "qa": "Screening técnico e de QA",
@@ -26,6 +28,23 @@
       },
       "preview": {
         "title": "Plano de avaliação de candidato",
+        "cards": {
+          "first": {
+            "title": "Desenvolvedor React Senior",
+            "subtitle": "Critérios de avaliação alinhados",
+            "badge": "Pronto"
+          },
+          "second": {
+            "title": "Analista QA",
+            "subtitle": "Screening de testes manuais",
+            "badge": "Em revisão"
+          },
+          "third": {
+            "title": "Relatório de contratação",
+            "subtitle": "Forças, riscos e próximos passos",
+            "badge": "Claro"
+          }
+        },
         "items": {
           "criteria": "Critérios específicos do cargo",
           "screening": "Apoio de screening técnico",

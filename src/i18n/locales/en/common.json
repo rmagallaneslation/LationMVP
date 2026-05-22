@@ -19,6 +19,8 @@
       "cta": "Request interview support",
       "secondaryCta": "See how it works",
       "note": "Built for teams that need technical interview bandwidth before they build a larger internal process.",
+      "trustedBy": "Structured support for technical hiring teams",
+      "scroll": "Scroll to explore",
       "features": {
         "expert": "Structured technical interviews",
         "qa": "QA and technical screening",
@@ -26,6 +28,23 @@
       },
       "preview": {
         "title": "Candidate evaluation plan",
+        "cards": {
+          "first": {
+            "title": "Senior React Developer",
+            "subtitle": "Evaluation criteria aligned",
+            "badge": "Ready"
+          },
+          "second": {
+            "title": "QA Analyst",
+            "subtitle": "Manual testing screen",
+            "badge": "In review"
+          },
+          "third": {
+            "title": "Hiring report",
+            "subtitle": "Strengths, risks, and next steps",
+            "badge": "Clear"
+          }
+        },
         "items": {
           "criteria": "Role-specific criteria",
           "screening": "Technical screening support",

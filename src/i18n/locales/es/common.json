@@ -1,25 +1,8 @@
 {
-  "nav": {
-    "home": "Inicio",
-    "login": "Iniciar Sesión",
-    "register": "Registrarse",
-    "dashboard": "Panel",
-    "logout": "Cerrar Sesión"
-  },
   "common": {
-    "welcome": "Bienvenido",
     "loading": "Cargando...",
     "error": "Error",
     "success": "Éxito",
-    "cancel": "Cancelar",
-    "save": "Guardar",
-    "delete": "Eliminar",
-    "edit": "Editar",
-    "submit": "Enviar",
-    "search": "Buscar",
-    "filter": "Filtrar",
-    "sort": "Ordenar",
-    "viewDetails": "Ver Detalles",
     "close": "Cerrar",
     "toggleThemeAria": "Cambiar tema"
   },
@@ -28,268 +11,204 @@
     "es": "Español",
     "pt": "Portugués"
   },
-  "dashboard": {
-    "title": "Panel",
-    "upcomingInterviews": "Próximas Entrevistas",
-    "scheduledInterviews": "Entrevistas Programadas",
-    "completedInterviews": "Entrevistas Completadas",
-    "stats": {
-      "totalInterviews": "Total de Entrevistas",
-      "creditsRemaining": "Créditos Restantes",
-      "pendingReports": "Informes Pendientes",
-      "teamMembers": "Miembros del Equipo"
-    },
-    "scheduleInterview": "Programar Entrevista",
-    "viewAll": "Ver Todos"
-  },
-  "interviewer": {
-    "title": "Panel del Entrevistador",
-    "pendingRequests": "Solicitudes Pendientes",
-    "upcomingInterviews": "Próximas Entrevistas",
-    "completedInterviews": "Entrevistas Completadas",
-    "accept": "Aceptar",
-    "reject": "Rechazar",
-    "joinMeeting": "Unirse a la Reunión",
-    "submitEvaluation": "Enviar Evaluación",
-    "viewReport": "Ver Informe"
-  },
-  "interview": {
-    "position": "Posición",
-    "candidate": "Candidato",
-    "company": "Empresa",
-    "date": "Fecha",
-    "time": "Hora",
-    "status": "Estado",
-    "experience": "Experiencia",
-    "skills": "Habilidades",
-    "notes": "Notas",
-    "evaluation": "Evaluación"
-  },
-  "status": {
-    "scheduled": "Programada",
-    "completed": "Completada",
-    "pending": "Pendiente",
-    "cancelled": "Cancelada",
-    "pending_evaluation": "Evaluación Pendiente",
-    "evaluation_submitted": "Evaluación Enviada"
-  },
-  "auth": {
-    "login": "Iniciar Sesión",
-    "register": "Registrarse",
-    "email": "Correo Electrónico",
-    "password": "Contraseña",
-    "confirmPassword": "Confirmar Contraseña",
-    "forgotPassword": "¿Olvidaste tu Contraseña?",
-    "dontHaveAccount": "¿No tienes una cuenta?",
-    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
-    "signIn": "Ingresar",
-    "signUp": "Registrarse"
-  },
-  "credits": {
-    "title": "Créditos",
-    "remaining": "Restantes",
-    "purchase": "Comprar Créditos",
-    "history": "Historial de Créditos"
-  },
   "landing": {
     "hero": {
-      "title": "Entrevistas técnicas. Bien hechas.",
-      "titlePrimary": "Entrevistas técnicas.",
-      "titleAccent": "Bien hechas.",
-      "subtitle": "Escala su contratación con entrevistas técnicas expertas. Obtenga evaluaciones estandarizadas, perspectivas impulsadas por IA e informes completos en horas, no en semanas.",
-      "cta": "Construyamos su equipo soñado",
-      "learnMore": "Saber más",
-      "trustedBy": "Con la confianza de 500+ empresas",
+      "titlePrimary": "Entrevistas técnicas estructuradas",
+      "titleAccent": "sin cargar a su equipo.",
+      "subtitle": "Lation ayuda a validar talento técnico con entrevistas estructuradas, evaluación enfocada en QA e informes claros para decisiones de contratación.",
+      "cta": "Solicitar apoyo de entrevista",
+      "secondaryCta": "Ver cómo funciona",
+      "note": "Pensado para equipos que necesitan capacidad de entrevista técnica antes de construir un proceso interno más grande.",
       "features": {
-        "expert": "Entrevistadores técnicos expertos",
-        "aiPowered": "Generación de preguntas impulsada por IA",
-        "reports": "Informes PDF detallados"
+        "expert": "Entrevistas técnicas estructuradas",
+        "qa": "Screening técnico y de QA",
+        "reports": "Informes listos para decidir"
       },
       "preview": {
-        "cards": {
-          "first": {
-            "title": "Desarrollador React Senior",
-            "subtitle": "Entrevista programada",
-            "badge": "Hoy 2:00 p. m."
-          },
-          "second": {
-            "title": "Ingeniero backend",
-            "subtitle": "Evaluación completada",
-            "badge": "Contratación sólida"
-          },
-          "third": {
-            "title": "Especialista DevOps",
-            "subtitle": "Informe pendiente",
-            "badge": "En progreso"
-          }
+        "title": "Plan de evaluación de candidato",
+        "items": {
+          "criteria": "Criterios específicos del rol",
+          "screening": "Apoyo de screening técnico",
+          "report": "Informe claro de contratación"
         }
       }
     },
-    "about": {
-      "label": "Sobre Lation",
-      "title": "Transformando la forma en que las empresas contratan talento técnico",
-      "titlePrimary": "Transformando la forma en que las empresas",
-      "titleAccent": "contratan talento técnico",
-      "description1": "Lation cierra la brecha entre empresas y talento técnico de primera categoría a través de procesos de entrevista estandarizados y dirigidos por expertos. Combinamos la experiencia humana con perspectivas impulsadas por IA para ofrecer las evaluaciones de candidatos más precisas.",
-      "description2": "Nuestra plataforma apoya a reclutadores y gerentes de contratación con evaluaciones técnicas completas, informes PDF detallados y recomendaciones basadas en datos que le ayudan a tomar decisiones de contratación con confianza.",
-      "features": {
-        "fast": {
-          "title": "Ultra rápido",
-          "description": "Obtenga evaluaciones técnicas completas en 24 horas. Nuestro proceso optimizado garantiza que nunca pierda a un gran candidato."
-        },
-        "expert": {
-          "title": "Entrevistadores Expertos",
-          "description": "Nuestros entrevistadores técnicos certificados cuentan con años de experiencia en la industria en diversos stacks tecnológicos y dominios."
-        },
-        "ai": {
-          "title": "Perspectivas impulsadas por IA",
-          "description": "Aproveche la inteligencia artificial para generar preguntas específicas y proporcionar evaluaciones estandarizadas e imparciales."
-        },
-        "scalable": {
-          "title": "Proceso Escalable",
-          "description": "Ya sea que esté contratando a un ingeniero o construyendo un equipo, nuestra plataforma se escala sin esfuerzo según sus necesidades."
-        }
-      }
+    "problem": {
+      "label": "El reto",
+      "title": "La validación técnica es difícil de escalar cuando el equipo ya está ocupado.",
+      "description": "Recruiters y founders suelen necesitar una lectura técnica antes de avanzar con un candidato, pero los ingenieros internos no siempre tienen tiempo para diseñar entrevistas, hacer screens y escribir feedback útil.",
+      "items": [
+        "Criterios de entrevista inconsistentes entre candidatos.",
+        "Feedback técnico lento después de entrevistas prometedoras.",
+        "Capacidad limitada para evaluar QA o testing manual."
+      ]
+    },
+    "solution": {
+      "label": "Cómo ayuda Lation",
+      "title": "Un servicio enfocado de evaluación para decisiones de contratación técnica.",
+      "description": "Lation apoya su proceso con criterios de entrevista estructurados, screening técnico o de QA e informes concisos que el equipo puede usar sin construir un flujo de plataforma completo.",
+      "items": [
+        "Definir expectativas del rol antes de la entrevista.",
+        "Ejecutar o apoyar la evaluación técnica.",
+        "Entregar un informe práctico con fortalezas, riesgos y siguientes pasos."
+      ]
     },
     "services": {
-      "label": "Lo que ofrecemos",
-      "title": "Soluciones completas de entrevistas",
-      "titlePrimary": "Soluciones completas de",
-      "titleAccent": "entrevistas",
-      "subtitle": "Servicios de entrevistas técnicas de extremo a extremo diseñados para ayudarle a contratar el mejor talento de manera eficiente.",
+      "label": "Servicios",
+      "title": "Apoyo de evaluación técnica",
+      "subtitle": "Servicios enfocados para equipos que necesitan cobertura de entrevista técnica sin añadir CRM, agenda u operaciones internas a este sitio.",
       "items": {
         "interviews": {
-          "title": "Entrevistas Técnicas",
-          "description": "Entrevistas técnicas dirigidas por expertos adaptadas a sus requisitos laborales. Nuestros entrevistadores evalúan habilidades de codificación, diseño de sistemas y capacidades de resolución de problemas.",
+          "title": "Entrevistas técnicas estructuradas",
+          "description": "Apoyo de entrevista alineado al rol, seniority y responsabilidades esperadas.",
           "features": [
-            "Sesiones de codificación en vivo",
-            "Discusiones de diseño de sistemas",
-            "Evaluación conductual"
+            "Criterios de evaluación por rol",
+            "Discusión técnica y ejercicios prácticos",
+            "Notas de scoring consistentes"
           ]
         },
-        "ai": {
-          "title": "Preguntas Impulsadas por IA",
-          "description": "Nuestra IA analiza descripciones de puestos para generar preguntas técnicas específicas, asegurando evaluaciones de candidatos completas y relevantes.",
+        "qa": {
+          "title": "Evaluación de QA y testing manual",
+          "description": "Evaluación de candidatos de QA, testing manual, diseño de pruebas, reporte de bugs y criterio de producto.",
           "features": [
-            "Preguntas específicas del trabajo",
-            "Dificultad adaptativa",
-            "Puntuación estandarizada"
-          ]
-        },
-        "teams": {
-          "title": "Integración con Microsoft Teams",
-          "description": "Entrevistas de video sin problemas con programación automática, integración de calendario y grabaciones de reuniones para revisión posterior.",
-          "features": [
-            "Reuniones programadas automáticamente",
-            "Grabación y reproducción",
-            "Soporte multiparte"
+            "Revisión de mentalidad de testing",
+            "Preguntas basadas en escenarios",
+            "Evidencia clara para decidir"
           ]
         },
         "reports": {
-          "title": "Informes PDF Detallados",
-          "description": "Informes de evaluación completos con evaluaciones de habilidades, puntajes y recomendaciones de contratación entregados en 24 horas.",
+          "title": "Informes listos para decidir",
+          "description": "Informes legibles que resumen fortalezas, dudas y seguimiento recomendado.",
           "features": [
-            "Desglose habilidad por habilidad",
-            "Puntuación comparativa",
-            "Recomendaciones claras"
+            "Resumen de ajuste al rol",
+            "Notas de habilidades y riesgos",
+            "Siguientes pasos recomendados"
+          ]
+        },
+        "advisory": {
+          "title": "Asesoría de proceso de entrevista",
+          "description": "Apoyo para equipos que necesitan definir un proceso repetible de entrevista técnica.",
+          "features": [
+            "Diseño de criterios",
+            "Guía de banco de preguntas",
+            "Soporte de rúbrica de evaluación"
           ]
         }
       }
     },
-    "stats": {
-      "label": "Nuestro impacto",
-      "title": "Números que hablan",
-      "subtitle": "Con la confianza de cientos de empresas en todo el mundo para ofrecer entrevistas técnicas excepcionales.",
-      "interviewsCompleted": "Entrevistas Completadas",
-      "activeClients": "Clientes Activos",
-      "interviewers": "Entrevistadores Certificados",
-      "sla": "SLA Promedio",
-      "descriptions": {
-        "interviews": "Evaluaciones técnicas realizadas",
-        "clients": "Empresas confían en Lation",
-        "interviewers": "Presencia en 8 países de LATAM.",
-        "sla": "De solicitud a informe"
-      }
+    "howItWorks": {
+      "label": "Cómo funciona",
+      "title": "Un flujo simple desde necesidad hasta evaluación",
+      "subtitle": "La landing captura su necesidad. Lation da seguimiento para definir el alcance y ejecutar el proceso adecuado.",
+      "steps": [
+        {
+          "title": "Comparta el rol o perfil del candidato.",
+          "description": "Envíe contexto, seniority, stack y objetivo de contratación."
+        },
+        {
+          "title": "Lation define los criterios de evaluación.",
+          "description": "Alineamos qué se debe validar y cómo se recopilará evidencia."
+        },
+        {
+          "title": "Conducimos o apoyamos el screening.",
+          "description": "La evaluación puede enfocarse en ingeniería, QA, testing manual o razonamiento técnico."
+        },
+        {
+          "title": "Recibe un informe estructurado.",
+          "description": "El informe entrega feedback claro para la siguiente decisión de contratación."
+        }
+      ]
     },
-    "clients": {
-      "label": "Con la confianza de líderes",
-      "title": "Empresas que confían en nosotros",
-      "subtitle": "Desde startups hasta empresas, las compañías líderes confían en Lation para sus necesidades de contratación técnica.",
-      "testimonial": {
-        "quote": "Lation transformó nuestro proceso de contratación. Sus entrevistadores expertos y sus informes detallados nos ayudaron a tomar decisiones seguras y a contratar talento de primer nivel más rápido que nunca.",
-        "author": "Jane Doe",
-        "position": "VP de Ingeniería, TechCorp"
-      }
+    "audience": {
+      "label": "Para quién es",
+      "title": "Para equipos que necesitan capacidad de entrevista técnica.",
+      "subtitle": "Lation encaja cuando su equipo necesita validación técnica, no otra plataforma interna.",
+      "items": [
+        "Empresas sin tech lead interno.",
+        "Equipos de recruiting que necesitan validación técnica.",
+        "Agencias con contratación de alto volumen.",
+        "Startups que necesitan screening técnico estructurado.",
+        "Equipos que evalúan candidatos de QA o testing manual."
+      ]
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Preguntas comunes",
+      "items": [
+        {
+          "question": "¿Esto es un CRM o una plataforma de agenda?",
+          "answer": "No. Este repositorio solo contiene la landing pública de Lation y el flujo protegido de captura de leads."
+        },
+        {
+          "question": "¿Lation reemplaza a mi equipo de contratación?",
+          "answer": "No. Lation ofrece apoyo de evaluación técnica e informes estructurados para que su equipo tome mejores decisiones."
+        },
+        {
+          "question": "¿Pueden evaluar candidatos de QA?",
+          "answer": "Sí. Lation puede apoyar evaluación de QA y testing manual, incluyendo diseño de pruebas, reporte de bugs y criterio de producto."
+        }
+      ]
     },
     "contact": {
-      "title": "Iniciemos una conversación",
-      "titlePrimary": "Iniciemos una",
-      "titleAccent": "conversación",
-      "subtitle": "¿Tiene curiosidad sobre cómo Lation puede revolucionar su contratación? Envíenos un mensaje y nuestro equipo se pondrá en contacto para conversar sobre sus necesidades específicas.",
-    "form": {
-      "title": "Póngase en contacto",
-      "name": "Su nombre",
-      "namePlaceholder": "Juan Pérez",
-      "email": "Correo electrónico",
-      "emailPlaceholder": "juan@empresa.com",
-      "company": "Nombre de la empresa",
-      "companyPlaceholder": "Su Empresa S.A.",
-      "message": "Su mensaje",
-      "messagePlaceholder": "Cuéntenos sobre sus necesidades de contratación, el tamaño de su equipo o cualquier pregunta que tenga...",
-      "submit": "Enviar mensaje",
-      "sending": "Enviando...",
-      "privacy": "Al enviar, acepta nuestra política de privacidad. Nunca compartiremos su información.",
-      "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
-      "error": "Algo salió mal. Por favor, inténtelo de nuevo.",
-      "unavailable": "Temporalmente no disponible",
-      "disabledTitle": "Formulario de contacto temporalmente no disponible",
-      "disabledMessage": "En este momento no podemos recibir nuevas solicitudes desde esta página. Por favor, inténtelo más tarde.",
-      "disabledToast": "El formulario de contacto no está disponible temporalmente.",
-      "disabledAdminHint": "Detalles de configuración: {{error}}"
-    },
+      "titlePrimary": "Cuéntenos qué necesita validar.",
+      "titleAccent": "Responderemos con un siguiente paso práctico.",
+      "subtitle": "Comparta el rol, perfil del candidato o necesidad de contratación. Lation dará seguimiento para definir el apoyo de evaluación.",
       "email": {
-        "label": "Envíenos un correo a",
-        "address": "hello@lation.io"
+        "label": "Email",
+        "address": "hello@lation.com.mx"
       },
       "response": {
         "label": "Tiempo de respuesta",
-        "time": "Dentro de 24 horas"
+        "time": "En 1 día hábil"
+      },
+      "form": {
+        "title": "Solicitar apoyo de entrevista",
+        "name": "Nombre",
+        "namePlaceholder": "Su nombre",
+        "email": "Email de trabajo",
+        "emailPlaceholder": "usted@empresa.com",
+        "company": "Empresa",
+        "companyPlaceholder": "Nombre de la empresa",
+        "role": "Rol o necesidad de contratación",
+        "rolePlaceholder": "Frontend engineer, QA analyst, screen técnico...",
+        "serviceInterest": "Servicio de interés",
+        "servicePlaceholder": "Seleccione un servicio",
+        "serviceOptions": {
+          "technicalInterviews": "Entrevistas técnicas estructuradas",
+          "qaEvaluation": "Evaluación QA/testing manual",
+          "reports": "Informe de evaluación de candidato",
+          "advisory": "Asesoría de proceso de entrevista"
+        },
+        "phone": "Teléfono",
+        "phonePlaceholder": "+52...",
+        "message": "Mensaje",
+        "messagePlaceholder": "Cuéntenos sobre el rol, tiempos, perfil del candidato o necesidad de evaluación.",
+        "submit": "Enviar necesidad de contratación",
+        "sending": "Enviando...",
+        "privacy": "Usaremos su información solo para responder esta solicitud.",
+        "success": "Solicitud enviada. Lation dará seguimiento pronto.",
+        "error": "No pudimos enviar su solicitud. Intente de nuevo.",
+        "validationError": "Complete los campos requeridos con información válida.",
+        "turnstileError": "Complete la verificación de seguridad antes de enviar.",
+        "unavailable": "Temporalmente no disponible",
+        "disabledTitle": "Formulario temporalmente no disponible",
+        "disabledMessage": "Al formulario le falta configuración requerida. Escriba a hello@lation.com.mx.",
+        "disabledToast": "El formulario no está disponible temporalmente.",
+        "disabledAdminHint": "Detalles de configuración: {{error}}"
       }
     },
     "footer": {
-      "tagline": "Transformando la contratación técnica con entrevistas expertas, perspectivas impulsadas por IA y evaluaciones completas de candidatos.",
-      "columns": {
-        "product": {
-          "title": "Producto",
-          "features": "Características",
-          "enterprises": "Para Empresas",
-          "api": "API"
-        },
-        "company": {
-          "title": "Empresa",
-          "about": "Acerca de",
-          "careers": "Carreras",
-          "blog": "Blog",
-          "press": "Prensa"
-        },
-        "resources": {
-          "title": "Recursos",
-          "documentation": "Documentación",
-          "helpCenter": "Centro de Ayuda",
-          "contact": "Contacto",
-          "status": "Estado"
-        },
-        "legal": {
-          "title": "Legal",
-          "privacy": "Privacidad",
-          "terms": "Términos",
-          "security": "Seguridad",
-          "cookies": "Cookies"
-        }
-      },
-      "copyright": "{{year}} Lation. Todos los derechos reservados.",
-      "madeWith": "Hecho con",
-      "forHiring": "para una mejor contratación"
+      "tagline": "Entrevistas técnicas estructuradas, evaluación QA e informes claros para decisiones de contratación.",
+      "contact": "Contacto",
+      "services": "Servicios",
+      "howItWorks": "Cómo funciona",
+      "faq": "FAQ",
+      "copyright": "{{year}} Lation. Todos los derechos reservados."
+    },
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "Esta landing solo publica la ruta pública de Lation.",
+      "home": "Volver al inicio"
     }
   }
 }

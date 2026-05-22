@@ -13,10 +13,10 @@ import {
 
 const RATE_LIMIT = 5;
 const RATE_WINDOW_SECONDS = 10 * 60;
-const ALLOWED_LEAD_TABLES = new Set(["leads", "leads_demo", "leads_dev"]);
+const ALLOWED_LEAD_TABLES = new Set(["leads"]);
 
 function getSupabaseAdminClient() {
-  const supabaseUrl = process.env.SUPABASE_URL?.trim() || process.env.VITE_SUPABASE_URL?.trim();
+  const supabaseUrl = process.env.VITE_SUPABASE_URL?.trim();
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
 
   if (!supabaseUrl || !serviceRoleKey) {
@@ -39,10 +39,6 @@ function resolveLeadTargetTable() {
     }
 
     return { ok: true, value: configuredTable };
-  }
-
-  if (process.env.VITE_DEMO_MODE === "true") {
-    return { ok: true, value: "leads_demo" };
   }
 
   return { ok: true, value: "leads" };
@@ -120,13 +116,23 @@ export default async function handler(req, res) {
   }
 
   const targetTable = targetTableResult.value;
+  const timestamp = new Date().toISOString();
   const { error } = await supabase.from(targetTable).insert({
     name: parsedPayload.value.name,
     email: parsedPayload.value.email,
     company: parsedPayload.value.company,
+    role: parsedPayload.value.role,
+    phone: parsedPayload.value.phone,
+    service_interest: parsedPayload.value.serviceInterest,
     message: parsedPayload.value.message,
-    source: "landing-page",
+    source: "landing",
+    locale: parsedPayload.value.locale,
     status: "new",
+    metadata: {
+      request_id: context.requestId,
+      target_table: targetTable,
+      submitted_at: timestamp,
+    },
   });
 
   if (error) {
@@ -134,7 +140,11 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "internal_error" });
   }
 
-  void sendLeadNotification(parsedPayload.value, context.requestId);
+  void sendLeadNotification(parsedPayload.value, {
+    requestId: context.requestId,
+    targetTable,
+    timestamp,
+  });
 
   logEvent("info", context, 200, "ok");
   return res.status(200).json({ ok: true });

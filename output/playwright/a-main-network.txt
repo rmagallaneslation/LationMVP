@@ -1,5 +1,0 @@
-[GET] http://127.0.0.1:4173/ => [200] OK
-[GET] http://127.0.0.1:4173/assets/index-BJm7S7G6.js => [200] OK
-[GET] http://127.0.0.1:4173/assets/index-B-ll_3ql.css => [200] OK
-[GET] http://127.0.0.1:4173/site.webmanifest => [200] OK
-[GET] https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap => [200] 

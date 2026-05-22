@@ -67,12 +67,7 @@ const SectionHeader = ({
   return (
     <div className={cn("space-y-4", alignment, className)}>
       {label ? (
-        <span
-          className={cn(
-            "font-semibold text-sm uppercase tracking-wider block",
-            labelClassName ?? "text-accent",
-          )}
-        >
+        <span className={cn("block text-sm font-semibold", labelClassName ?? "text-accent")}>
           {label}
         </span>
       ) : null}

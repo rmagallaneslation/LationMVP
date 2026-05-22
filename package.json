@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run validate:contact-env && vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
+    "validate:contact-env": "node scripts/validate-contact-env.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

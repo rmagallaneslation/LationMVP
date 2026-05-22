@@ -1,3 +1,0 @@
-Total messages: 1 (Errors: 1, Warnings: 0)
-
-[ERROR] 404 Error: User attempted to access non-existent route: /does-not-exist @ http://127.0.0.1:4173/assets/index-CHoiT9nX.js:90

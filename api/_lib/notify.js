@@ -16,17 +16,15 @@ function parseRecipients(value) {
     .filter(Boolean);
 }
 
-function resolveLeadSubjectPrefix() {
-  const targetTable = process.env.LEADS_TARGET_TABLE?.trim();
-  if (targetTable === "leads_dev") return "[DEV] ";
-  if (targetTable === "leads_demo" || process.env.VITE_DEMO_MODE === "true") return "[DEMO] ";
+function resolveLeadSubjectPrefix(targetTable) {
+  if (process.env.VITE_DEMO_MODE === "true") return "[DEMO] ";
   return "";
 }
 
-export async function sendLeadNotification(payload, requestId) {
+export async function sendLeadNotification(payload, context) {
   const apiKey = process.env.RESEND_API_KEY?.trim();
-  const fromEmail = process.env.RESEND_FROM_EMAIL?.trim();
-  const recipientsRaw = process.env.RESEND_NOTIFICATION_TO?.trim();
+  const fromEmail = process.env.LEAD_NOTIFY_FROM?.trim();
+  const recipientsRaw = process.env.LEAD_NOTIFY_TO?.trim();
 
   if (!apiKey || !fromEmail || !recipientsRaw) {
     return;
@@ -42,8 +40,16 @@ export async function sendLeadNotification(payload, requestId) {
     const safeName = escapeHtml(payload.name);
     const safeEmail = escapeHtml(payload.email);
     const safeCompany = payload.company ? escapeHtml(payload.company) : "No company";
+    const safePhone = payload.phone ? escapeHtml(payload.phone) : "Not provided";
+    const safeRole = payload.role ? escapeHtml(payload.role) : "Not provided";
+    const safeServiceInterest = payload.serviceInterest
+      ? escapeHtml(payload.serviceInterest)
+      : "Not provided";
+    const safeLocale = payload.locale ? escapeHtml(payload.locale) : "Not provided";
     const safeMessage = escapeHtml(payload.message);
-    const subjectPrefix = resolveLeadSubjectPrefix();
+    const safeTargetTable = escapeHtml(context.targetTable);
+    const safeTimestamp = escapeHtml(context.timestamp);
+    const subjectPrefix = resolveLeadSubjectPrefix(context.targetTable);
 
     const { error } = await resend.emails.send({
       from: fromEmail,
@@ -54,9 +60,14 @@ export async function sendLeadNotification(payload, requestId) {
         <p><strong>Name:</strong> ${safeName}</p>
         <p><strong>Email:</strong> ${safeEmail}</p>
         <p><strong>Company:</strong> ${safeCompany}</p>
+        <p><strong>Phone:</strong> ${safePhone}</p>
+        <p><strong>Role / hiring need:</strong> ${safeRole}</p>
+        <p><strong>Service interest:</strong> ${safeServiceInterest}</p>
         <p><strong>Message:</strong> ${safeMessage}</p>
-        <p><strong>Source:</strong> landing-page</p>
-        <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>
+        <p><strong>Locale:</strong> ${safeLocale}</p>
+        <p><strong>Source:</strong> landing</p>
+        <p><strong>Environment/table:</strong> ${safeTargetTable}</p>
+        <p><strong>Timestamp:</strong> ${safeTimestamp}</p>
       `,
     });
 
@@ -64,7 +75,7 @@ export async function sendLeadNotification(payload, requestId) {
       console.warn(
         JSON.stringify({
           timestamp: new Date().toISOString(),
-          request_id: requestId,
+          request_id: context.requestId,
           route: "/api/lead",
           status: 200,
           code: "notification_failed",
@@ -75,7 +86,7 @@ export async function sendLeadNotification(payload, requestId) {
     console.warn(
       JSON.stringify({
         timestamp: new Date().toISOString(),
-        request_id: requestId,
+        request_id: context.requestId,
         route: "/api/lead",
         status: 200,
         code: "notification_failed",
